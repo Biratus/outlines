@@ -64,8 +64,8 @@
  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 **/
-(function(){
-	
+(function () {
+
 	var uni = {
 		"unistrokes": {
 			"triangle": [
@@ -161,7 +161,7 @@
 		this.Unistrokes = [];
 		// this.Unistrokes[0] = new Unistroke("triangle", new Array(new Point(137,139),new Point(135,141),new Point(133,144),new Point(132,146),new Point(130,149),new Point(128,151),new Point(126,155),new Point(123,160),new Point(120,166),new Point(116,171),new Point(112,177),new Point(107,183),new Point(102,188),new Point(100,191),new Point(95,195),new Point(90,199),new Point(86,203),new Point(82,206),new Point(80,209),new Point(75,213),new Point(73,213),new Point(70,216),new Point(67,219),new Point(64,221),new Point(61,223),new Point(60,225),new Point(62,226),new Point(65,225),new Point(67,226),new Point(74,226),new Point(77,227),new Point(85,229),new Point(91,230),new Point(99,231),new Point(108,232),new Point(116,233),new Point(125,233),new Point(134,234),new Point(145,233),new Point(153,232),new Point(160,233),new Point(170,234),new Point(177,235),new Point(179,236),new Point(186,237),new Point(193,238),new Point(198,239),new Point(200,237),new Point(202,239),new Point(204,238),new Point(206,234),new Point(205,230),new Point(202,222),new Point(197,216),new Point(192,207),new Point(186,198),new Point(179,189),new Point(174,183),new Point(170,178),new Point(164,171),new Point(161,168),new Point(154,160),new Point(148,155),new Point(143,150),new Point(138,148),new Point(136,148)));
 		// this.Unistrokes[1] = new Unistroke("x", new Array(new Point(87,142),new Point(89,145),new Point(91,148),new Point(93,151),new Point(96,155),new Point(98,157),new Point(100,160),new Point(102,162),new Point(106,167),new Point(108,169),new Point(110,171),new Point(115,177),new Point(119,183),new Point(123,189),new Point(127,193),new Point(129,196),new Point(133,200),new Point(137,206),new Point(140,209),new Point(143,212),new Point(146,215),new Point(151,220),new Point(153,222),new Point(155,223),new Point(157,225),new Point(158,223),new Point(157,218),new Point(155,211),new Point(154,208),new Point(152,200),new Point(150,189),new Point(148,179),new Point(147,170),new Point(147,158),new Point(147,148),new Point(147,141),new Point(147,136),new Point(144,135),new Point(142,137),new Point(140,139),new Point(135,145),new Point(131,152),new Point(124,163),new Point(116,177),new Point(108,191),new Point(100,206),new Point(94,217),new Point(91,222),new Point(89,225),new Point(87,226),new Point(87,224)));
-	
+
 		/*var square = [Point(0, 0), Point(10, 0), Point(10, 10), Point(0, 10), Point(0, 0)];
 		this.Unistrokes.push(new Unistroke("square", square.slice()));
 		this.Unistrokes.push(new Unistroke("square", square.slice().reverse()));
@@ -178,7 +178,7 @@
 	
 		this.Unistrokes.push(new Unistroke("circle", circle.slice()));
 		this.Unistrokes.push(new Unistroke("circle", circle.slice().reverse()));*/
-	
+
 		uni = uni.unistrokes;
 		for (var type in uni) {
 			if (uni.hasOwnProperty(type)) {
@@ -188,17 +188,17 @@
 					arr.push(new Point(obj[0], obj[1]));
 				}
 				this.Unistrokes.push(new Unistroke(type, arr));
-				this.Unistrokes.push(new Unistroke(type,arr.slice().reverse()));
+				this.Unistrokes.push(new Unistroke(type, arr.slice().reverse()));
 				arr = [];
 				for (var i in uni[type][1]) {
 					obj = uni[type][1][i];
 					arr.push(new Point(obj[0], obj[1]));
 				}
 				this.Unistrokes.push(new Unistroke(type, arr));
-				this.Unistrokes.push(new Unistroke(type,arr.slice().reverse()));
+				this.Unistrokes.push(new Unistroke(type, arr.slice().reverse()));
 			}
 		}
-	
+
 		// this.Unistrokes.push( new Unistroke("check", new Array(new Point(91,185),new Point(93,185),new Point(95,185),new Point(97,185),new Point(100,188),new Point(102,189),new Point(104,190),new Point(106,193),new Point(108,195),new Point(110,198),new Point(112,201),new Point(114,204),new Point(115,207),new Point(117,210),new Point(118,212),new Point(120,214),new Point(121,217),new Point(122,219),new Point(123,222),new Point(124,224),new Point(126,226),new Point(127,229),new Point(129,231),new Point(130,233),new Point(129,231),new Point(129,228),new Point(129,226),new Point(129,224),new Point(129,221),new Point(129,218),new Point(129,212),new Point(129,208),new Point(130,198),new Point(132,189),new Point(134,182),new Point(137,173),new Point(143,164),new Point(147,157),new Point(151,151),new Point(155,144),new Point(161,137),new Point(165,131),new Point(171,122),new Point(174,118),new Point(176,114),new Point(177,112),new Point(177,114),new Point(175,116),new Point(173,118))) );
 		// this.Unistrokes[5] = new Unistroke("caret", new Array(new Point(79,245),new Point(79,242),new Point(79,239),new Point(80,237),new Point(80,234),new Point(81,232),new Point(82,230),new Point(84,224),new Point(86,220),new Point(86,218),new Point(87,216),new Point(88,213),new Point(90,207),new Point(91,202),new Point(92,200),new Point(93,194),new Point(94,192),new Point(96,189),new Point(97,186),new Point(100,179),new Point(102,173),new Point(105,165),new Point(107,160),new Point(109,158),new Point(112,151),new Point(115,144),new Point(117,139),new Point(119,136),new Point(119,134),new Point(120,132),new Point(121,129),new Point(122,127),new Point(124,125),new Point(126,124),new Point(129,125),new Point(131,127),new Point(132,130),new Point(136,139),new Point(141,154),new Point(145,166),new Point(151,182),new Point(156,193),new Point(157,196),new Point(161,209),new Point(162,211),new Point(167,223),new Point(169,229),new Point(170,231),new Point(173,237),new Point(176,242),new Point(177,244),new Point(179,250),new Point(181,255),new Point(182,257)));
 		// this.Unistrokes[6] = new Unistroke("zig-zag", new Array(new Point(307,216),new Point(333,186),new Point(356,215),new Point(375,186),new Point(399,216),new Point(418,186)));
@@ -216,9 +216,9 @@
 		var line = [Point(0, 0), Point(100, 0)];
 		this.Unistrokes.push(new Unistroke("line", line.slice()));
 		this.Unistrokes.push(new Unistroke("line", line.slice().reverse()));
-	
+
 		NumUnistrokes = this.Unistrokes.length;
-	
+
 		//
 		// The $1 Gesture Recognizer API begins here -- 3 methods: Recognize(), AddGesture(), and DeleteUserGestures()
 		//
@@ -229,10 +229,10 @@
 			points = ScaleTo(points, SquareSize);
 			points = TranslateTo(points, Origin);
 			var vector = Vectorize(points); // for Protractor
-	
+
 			var b = +Infinity;
 			var u = -1;
-			let scores=[];
+			let scores = [];
 			for (var i = 0; i < this.Unistrokes.length; i++) // for each unistroke
 			{
 				var d;
@@ -240,18 +240,20 @@
 					d = OptimalCosineDistance(this.Unistrokes[i].Vector, vector);
 				else // Golden Section Search (original $1)
 					d = DistanceAtBestAngle(points, this.Unistrokes[i], -AngleRange, +AngleRange, AnglePrecision);
-					scores.push({Shape:this.Unistrokes[i].Name,Score:d});
+				scores.push({ Shape: this.Unistrokes[i].Name, Score: d });
 				if (d < b) {
 					b = d; // best (least) distance
 					u = i; // unistroke
 				}
 			}
 			//console.log( (radians / Math.PI * 180).toFixed(2) + 'deg' );
-			return {result:(u == -1) ? new Result("No match.", 0.0) : new Result(this.Unistrokes[u].Name, useProtractor ? 1.0 / b : 1.0 - b / HalfDiagonal),
-		list:scores.sort(function(a,b) {return a.Score-b.Score})}
+			return {
+				result: (u == -1) ? new Result("No match.", 0.0) : new Result(this.Unistrokes[u].Name, useProtractor ? 1.0 / b : 1.0 - b / HalfDiagonal),
+				list: scores.sort(function (a, b) { return a.Score - b.Score })
+			}
 			// return (u == -1) ? new Result("No match.", 0.0) : new Result(this.Unistrokes[u].Name, useProtractor ? 1.0 / b : 1.0 - b / HalfDiagonal);
 		};
-	
+
 		this.Rank = function (points, useProtractor) {
 			points = Resample(points, NumPoints);
 			var radians = IndicativeAngle(points);
@@ -260,7 +262,7 @@
 			points = TranslateTo(points, Origin);
 			var vector = Vectorize(points); // for Protractor
 			var ranks = [];
-	
+
 			var b = +Infinity;
 			var u = -1;
 			for (var i = 0; i < this.Unistrokes.length; i++) // for each unistroke
@@ -272,7 +274,7 @@
 					d = DistanceAtBestAngle(points, this.Unistrokes[i], -AngleRange, +AngleRange, AnglePrecision);
 				ranks.push(new Result(this.Unistrokes[i].Name, useProtractor ? 1.0 / d : 1.0 - d / HalfDiagonal));
 			}
-	
+
 			// Sort by score
 			ranks.sort(function (a, b) {
 				if (a.Score > b.Score) {
@@ -283,10 +285,10 @@
 					return 0;
 				}
 			});
-	
+
 			return ranks;
 		}
-	
+
 		this.AddGesture = function (name, points) {
 			this.Unistrokes[this.Unistrokes.length] = new Unistroke(name, points); // append new unistroke
 			var num = 0;
@@ -345,7 +347,7 @@
 	function ScaleTo(points, size) // non-uniform scale; assumes 2D gestures (i.e., no lines)
 	{
 		var B = BoundingBox(points);
-	
+
 		// Algorithm didn't handle lines well as the thin axis would exagerate even the
 		// slightest wiggle into a mountain after scaling, this
 		var min = Math.min(B.Width, B.Height);
@@ -354,7 +356,7 @@
 			B.Width = max;
 			B.Height = max;
 		}
-	
+
 		var newpoints = new Array();
 		for (var i = 0; i < points.length; i++) {
 			var qx = points[i].X * (size / B.Width);
@@ -463,16 +465,16 @@
 		return Math.sqrt(dx * dx + dy * dy);
 	}
 	function Deg2Rad(d) { return (d * Math.PI / 180.0); }
-	
+
 	var outlines = {
 		Point: Point,
 		DollarRecognizer: DollarRecognizer
 	};
-	
-	if ( typeof module !== 'undefined' && typeof module.exports !== 'undefined' ) {
-	module.exports = outlines;
+
+	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+		module.exports = outlines;
 	} else {
-	window.outlines = outlines;
+		window.outlines = outlines;
 	}
-	
-	})();
+
+})();
