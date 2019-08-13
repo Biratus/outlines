@@ -2,7 +2,7 @@
   "name": "outlines",
   "version": "1.0.0",
   "description": "Recognize drawn shapes.",
-  "main": "dist/Unistrokes.js",
+  "main": "dist/Unistroke.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server docs -p 8080",
